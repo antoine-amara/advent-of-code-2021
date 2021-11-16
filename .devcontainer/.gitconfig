@@ -1,0 +1,44 @@
+[user]
+    name = Antoine AMARA
+    email = antoine.amara@dreamquark.com
+[color]
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    editor = nvim
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    pager = true
+    status = auto
+    ui = true
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+[alias]
+# show aliases
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+# shortcuts
+    cl = clone
+    pushf = push --force-with-lease
+    co = checkout
+    br = branch -a -vv
+    clean-br = "! git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
+    stream = branch --set-upstream-to
+    cm = commit
+    st = status -sb
+    ft = fetch --prune
+    pl = pull --rebase
+    show = show --color-words
+    df = diff
+    man = help
+    bs = bisect
+    unstage = git reset HEAD~1
+# diff and log helpers
+    lg = log --graph --pretty=tformat:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %C(blue)(%an) %Cgreen(%cd - %cr)%Creset' --abbrev-commit --date=local
+[push]
+#    default = matching
+	default = upstream

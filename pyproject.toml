@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "advent-of-code-2021"
+version = "0.1.0"
+description = "the advent of code 2021 dev env and solutions"
+authors = ["Antoine AMARA <amara.antoine@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ipython = "^7.29.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+flake8 = "^4.0.1"
+black = "^21.10b0"
+debugpy = "^1.5.1"
+pre-commit = "^2.15.0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 99
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
