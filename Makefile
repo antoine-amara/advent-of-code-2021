@@ -22,7 +22,9 @@ format: refreshcache	## run black formater
 	poetry run black advent_of_code_2021
 
 run: refreshcache	## run python script which resolve one day problem. the name should be day-{N}.py. For example to run problem day 23rd: "make run day=23"
+	echo "#### Launching solution for day ${day} ####\n"
 	poetry run ipython advent_of_code_2021/day-${day}.py
+	echo "\n###########################################\n"
 .PHONY: run
 
 run-debug: refreshcache	## run python script which resolve one day problem in debug mode. it stop the execution until vscode debugger is connected to the process on port 4242.

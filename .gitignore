@@ -176,3 +176,6 @@ ipython_config.py
 #   git rm -r .ipynb_checkpoints/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
+
+# ignore examples inputs
+advent_of_code_2021/data/**/example.txt
