@@ -15,11 +15,14 @@ attach-git-hooks: refreshcache	## attach git hooks to make some checks on the co
 .PHONY: attach-git-hooks
 
 lint: refreshcache	## run flake8 linter
-	poetry run flake8 advent_of_code_2021
+	poetry run flake8 advent_of_code_2021 helpers
 .PHONY: lint
 
 format: refreshcache	## run black formater
-	poetry run black advent_of_code_2021
+	poetry run black advent_of_code_2021 helpers
+
+template: refreshcache	## init a new day solution script from the global template
+	cp helpers/day-N.template.py advent_of_code_2021/day-${day}.py
 
 run: refreshcache	## run python script which resolve one day problem. the name should be day-{N}.py. For example to run problem day 23rd: "make run day=23"
 	echo "#### Launching solution for day ${day} ####\n"
