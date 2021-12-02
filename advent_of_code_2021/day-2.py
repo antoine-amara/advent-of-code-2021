@@ -1,4 +1,4 @@
-import pandas as pd
+from helpers.input_parser import read_input_as_dataframe
 
 # move direction
 HORIZONTAL = "horizontal"
@@ -12,8 +12,7 @@ UP = "up"
 
 
 def read_input(input_name="example.txt"):
-    path = f"advent_of_code_2021/data/day-2/{input_name}"
-    df = pd.read_csv(path, delimiter=" ", header=None, names=["command", "units"])
+    df = read_input_as_dataframe(day=2, input_name=input_name, names=["command", "units"])
     return df
 
 
