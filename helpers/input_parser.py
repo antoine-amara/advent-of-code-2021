@@ -9,7 +9,7 @@ def read_input_lines(*, day=1, input_name="example.txt"):
 
 
 def parse_list_elements_to_int(input_list=[]):
-    return [int(element) for element in input_list]
+    return [int(element) for element in input_list if element != ""]
 
 
 def parse_list_elements_to_u8_string(input_list=[]):

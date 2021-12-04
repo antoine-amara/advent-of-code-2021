@@ -8,6 +8,7 @@ authors = ["Antoine AMARA <amara.antoine@gmail.com>"]
 python = "^3.10"
 ipython = "^7.29.0"
 pandas = "^1.3.4"
+iteration-utilities = "^0.11.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
